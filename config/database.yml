@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: jaketrent-data_production
-  username: jaketrent-data
-  password: <%= ENV['JAKETRENT-DATA_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
