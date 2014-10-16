@@ -27,5 +27,8 @@ module JaketrentData
       end
     end
 
+    # allow session_store middleware to be added
+    config.api_only = false
+
   end
 end

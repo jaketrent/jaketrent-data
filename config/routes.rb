@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+
+  # TODO: shouldn't need dup; consolidate into api namespace
+  get '/auth/:provider/callback' => 'api/v1/sessions#create'
+
   namespace :api do
     namespace :v1 do
+
+      get '/sessions/current' => 'sessions#current'
+      get '/auth/:provider/callback' => 'sessions#create'
+      get '/login' => 'sessions#new'
+      get '/logout' => 'sessions#destroy'
 
       resources :books, except: [:new, :edit]
 

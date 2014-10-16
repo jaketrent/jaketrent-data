@@ -18,6 +18,9 @@ gem 'date_validator'
 
 gem 'kaminari'
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 group :production do
   gem 'rails_stdout_logging'
 end

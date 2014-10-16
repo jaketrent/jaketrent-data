@@ -3,6 +3,8 @@ module Api
     class BooksController < ApplicationController
       include ErrorSerializer
 
+      before_filter :require_session
+
       after_filter only: [:index] { set_pagination_header(:books) }
 
       def index
@@ -53,6 +55,14 @@ module Api
       def book_params
         params.require(:books).permit(:title, :description, :cover_url, :complete_date, :review_url)
       end
+
+      def require_session
+        unless session[:user_id]
+          # TODO: render more proper errors and status
+          raise "no valid session"
+        end
+      end
+
     end
   end
 end
