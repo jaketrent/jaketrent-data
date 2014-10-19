@@ -35,7 +35,7 @@ module Api
         if @book.update(book_params)
           render json: @book, status: :ok, location: @book
         else
-          render json: @book.errors, status: :unprocessable_entity
+          render json: ErrorSerializer.serialize(@book.errors), status: :unprocessable_entity
         end
       end
 
