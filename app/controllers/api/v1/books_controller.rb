@@ -3,7 +3,7 @@ module Api
     class BooksController < ApplicationController
       include ErrorSerializer
 
-      before_filter :require_session
+      # before_filter :require_session
 
       after_filter only: [:index] { set_pagination_header(:books) }
 
@@ -53,7 +53,7 @@ module Api
       private
 
       def book_params
-        params.require(:books).permit(:title, :description, :cover_url, :complete_date, :review_url)
+        params.require(:books).permit(:title, :author, :description, :cover_url, :complete_date, :review_url)
       end
 
       def require_session
