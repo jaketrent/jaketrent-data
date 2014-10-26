@@ -53,7 +53,7 @@ module Api
       private
 
       def book_params
-        params.require(:books).permit(:title, :author, :description, :cover_url, :complete_date, :review_url)
+        params.require(:books).permit(:title, :author, :description, :cover_url, :complete_date, :review_url, :affiliate_url)
       end
 
       def require_session
