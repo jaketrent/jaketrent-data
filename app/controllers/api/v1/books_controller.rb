@@ -3,7 +3,7 @@ module Api
     class BooksController < ApplicationController
       include ErrorSerializer
 
-      before_filter :require_session, except: :index
+      before_filter :require_session, except: [:index, :show]
 
       after_filter only: [:index] { set_pagination_header(:books) }
 
