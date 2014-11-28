@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
+gem 'rails', '4.1.8'
 
 gem 'rails-api'
 
@@ -41,4 +41,4 @@ end
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-ruby '2.1.1'
+ruby '2.1.5'
